@@ -86,11 +86,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler (~> 2.1.4)
   pry
   rake (~> 12.0)
   rspec (~> 3.0)
   sqlite3 (~> 1.3.6)
   transparam!
-
-BUNDLED WITH
-   2.1.4

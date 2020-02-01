@@ -25,14 +25,15 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'activerecord', '~> 4.2'
-  spec.add_runtime_dependency 'protected_attributes'
   spec.add_runtime_dependency 'parser'
-  spec.add_runtime_dependency 'unparser'
+  spec.add_runtime_dependency 'protected_attributes'
   spec.add_runtime_dependency 'rufo'
   spec.add_runtime_dependency 'thor', '~> 1.0.0'
+  spec.add_runtime_dependency 'unparser'
 
-  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'bundler', '~> 2.1.4'
   spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'sqlite3', '~> 1.3.6'
   spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'sqlite3', '~> 1.3.6'
 end

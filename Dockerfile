@@ -63,9 +63,9 @@ ENV PATH /gems/bin:$PATH
 ###############################################################################
 
 RUN mkdir -p "$GEM_HOME" && chown $USER:$USER "$GEM_HOME"
-RUN mkdir -p /gem && chown $USER:$USER /gem
+RUN mkdir -p /transparam && chown $USER:$USER /transparam
 
-WORKDIR /gem
+WORKDIR /transparam
 
 USER $USER
 

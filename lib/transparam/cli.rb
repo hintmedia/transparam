@@ -17,5 +17,17 @@ module Transparam
       puts "v#{Transparam::VERSION}"
     end
     map %w(--version -v) => :version
+
+    desc 'generate', 'Command description...'
+    method_option :help, aliases: '-h', type: :boolean,
+                         desc: 'Display usage information'
+    def generate(*)
+      if options[:help]
+        invoke :help, ['generate']
+      else
+        require_relative 'commands/generate'
+        Transparam::Commands::Generate.new(options).execute
+      end
+    end
   end
 end
