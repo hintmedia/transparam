@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'parser'
   spec.add_runtime_dependency 'unparser'
   spec.add_runtime_dependency 'rufo'
+  spec.add_runtime_dependency 'thor', '~> 1.0.0'
 
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'pry'
