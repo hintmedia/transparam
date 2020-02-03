@@ -46,12 +46,10 @@ RSpec.describe Transparam do
   end
 
   it '' do
-    # file = File.read('spec/fixtures/app/models/user.rb')
-    # file_ast = Parser::CurrentRuby.parse(file)
-    # processor = Processor.new
-    # result = processor.process_all(file_ast)
-    # puts result
-
-    puts File.expand_path(File.dirname(__FILE__))
+    file = File.read('spec/fixtures/test-app/app/models/user.rb')
+    file_ast = Parser::CurrentRuby.parse(file)
+    processor = Processor.new
+    result = processor.process_all(file_ast)
+    puts result
   end
 end

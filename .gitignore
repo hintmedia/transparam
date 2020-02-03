@@ -10,3 +10,4 @@
 # rspec failure tracking
 .rspec_status
 moderate-param-migrator-rake-task.rb
+spec/fixtures/test-app/app/controllers

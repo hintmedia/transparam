@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../command'
+require 'pathname'
 
 module Transparam
   module Commands
@@ -10,7 +11,9 @@ module Transparam
       end
 
       def execute(input: $stdin, output: $stdout)
-        output.puts "OK"
+        project_path = Pathname.new(@options[:project_path] || Dir.pwd)
+        facts = FactCollector.call(project_path: project_path)
+        ParamModuleGenerator.call(facts: facts, project_path: project_path)
       end
     end
   end

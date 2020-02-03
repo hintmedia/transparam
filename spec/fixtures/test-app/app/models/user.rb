@@ -5,10 +5,9 @@ ActiveRecord::Schema.define do
 end
 
 class User < ActiveRecord::Base
-  attr_accessible 'email', :foobar
+  attr_accessible :email, :phone_numbers_attributes
 
   has_many :phone_numbers
-  has_many :foo_bars
 
-  accepts_nested_attributes_for :phone_numbers, :foo_bars, update_only: true, allow_destroy: true
+  accepts_nested_attributes_for :phone_numbers, update_only: true, allow_destroy: true
 end
