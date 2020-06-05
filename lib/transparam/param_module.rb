@@ -16,6 +16,10 @@ module Transparam
       project_path.join('app/controllers/concerns/strong_parameters/').join(model_file)
     end
 
+    def module_name(name = klass_name)
+      "Concerns::StrongParameters::#{name}"
+    end
+
     private
 
     def source_code_ast
@@ -88,10 +92,6 @@ module Transparam
 
     def model_path
       project_path.join('app/models/').join(model_file)
-    end
-
-    def module_name(name = klass_name)
-      "Concerns::StrongParameters::#{name}"
     end
 
     def resource_name

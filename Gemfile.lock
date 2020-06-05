@@ -86,7 +86,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
   bundler (~> 2.1.4)
   pry
   rake (~> 12.0)

@@ -1,21 +1,19 @@
 require 'transparam/commands/generate'
 
 RSpec.describe Transparam::Commands::Generate do
-  let(:facts) do
-    [{ 'klass_name' => 'Foo::Bar::User', 'permitted_params' => ['email', { 'phone_numbers_attributes' => { 'extra_attrs' => ['_destroy'], 'klass_name' => 'PhoneNumber' } }] }]
-  end
-
-  before do
-    allow(Transparam::FactCollector).to receive(:call).and_return(facts)
-  end
-
-  it "executes `generate` command successfully" do
+  it "executes `generate` command successfully", with_sample_facts: true do
     output = StringIO.new
     options = { project_path: test_app_path }
     command = Transparam::Commands::Generate.new(options)
 
-    command.execute(output: output)
+    expect { command.execute(output: output) }.to change {
+      File.exists?("#{test_app_path}/app/controllers/concerns/strong_parameters/foo/bar/user.rb")
+    }.to(true)
 
-    # expect(output.string).to eq("OK\n")
+    expect(output.string).to eq(<<~OUTPUT.strip)
+      Generated:
+
+      Concerns::StrongParameters::Foo::Bar::User
+    OUTPUT
   end
 end

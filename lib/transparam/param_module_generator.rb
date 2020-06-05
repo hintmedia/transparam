@@ -8,10 +8,11 @@ module Transparam
     end
 
     def call
-      facts.each do |fact|
+      facts.map do |fact|
         param_module = ParamModule.new(fact: fact, project_path: project_path)
         FileUtils.mkdir_p(File.dirname(param_module.module_path))
         File.write(param_module.module_path, param_module.source_code)
+        param_module.module_name
       end
     end
 

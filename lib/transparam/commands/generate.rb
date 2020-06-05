@@ -13,7 +13,8 @@ module Transparam
       def execute(input: $stdin, output: $stdout)
         project_path = Pathname.new(@options[:project_path] || Dir.pwd)
         facts = FactCollector.call(project_path: project_path)
-        ParamModuleGenerator.call(facts: facts, project_path: project_path)
+        module_names = ParamModuleGenerator.call(facts: facts, project_path: project_path)
+        output << "Generated:\n\n#{module_names.join("\n")}"
       end
     end
   end

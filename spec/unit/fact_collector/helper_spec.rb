@@ -26,4 +26,15 @@ RSpec.describe Transparam::FactCollector::Helper do
       expect_result([{ 'klass_name' => 'User', 'permitted_params' => ['email', { 'phone_numbers_attributes' => { 'extra_attrs' => ['_destroy'], 'klass_name' => 'PhoneNumber' } }] }])
     end
   end
+
+  context 'with PhoneNumber class' do
+    before do
+      allow_model_path('phone_number.rb')
+      described_class.call(options)
+    end
+
+    it 'has the expected result' do
+      expect_result([{ 'klass_name' => 'PhoneNumber','permitted_params' => ['number'] }])
+    end
+  end
 end
