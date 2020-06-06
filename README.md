@@ -28,7 +28,7 @@ module Concerns
   module StrongParameters
     module User
       def user_params
-        params.require(:user).moderate(controller_name, action_name, *Concerns::StrongParameters::Foo::Bar::User.permitted_attrs)
+        params.require(:user).moderate(controller_name, action_name, *Concerns::StrongParameters::User.permitted_attrs)
       end
 
       def self.permitted_attrs
