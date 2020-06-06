@@ -30,4 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'rufo'
   spec.add_runtime_dependency 'thor', '~> 1.0.0'
   spec.add_runtime_dependency 'unparser'
+
+  spec.add_development_dependency 'simplecov'
 end

@@ -4,6 +4,11 @@ Bundler.require(:default, :test)
 require 'active_record'
 require 'protected_attributes'
 
+require 'simplecov'
+SimpleCov.start do
+  add_filter 'lib/transparam/command.rb'
+end
+
 require 'transparam'
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
