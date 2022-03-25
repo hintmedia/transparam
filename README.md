@@ -1,6 +1,8 @@
 # Transparam
 
-Transparam assists in the process of migrating a rails application from `protected_attributes` to `strong_parameters`.
+> :warning: **Alpha quality**: While Transparam has been used at Hint for a couple of years now, it should be considered alpha quality. Your mileage may vary! Also, please see the [Known issues](#known-issues) below for a list of shortcomings (contribution opportunities…?).
+
+Transparam assists in the process of migrating a rails application from `protected_attributes` to `strong_parameters`. Transparam makes some assumptions about how strong parameters should be implemented in your application. To learn more, checkout this [blog post](https://hint.io/blog/strong-parameters-strong-opinions).
 
 For example, the User model defined here:
 
@@ -60,7 +62,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 - `attr_protected` is not yet supported.
 - Multiple roles are not yet supported (example `as: :admin`).
-- Only moderate_parameters is supported (`.permit` vs `.moderate`). Ideally this would be configurable. 
+- Only [moderate_parameters](https://github.com/hintmedia/moderate_parameters) is supported (`.permit` vs `.moderate`). Ideally this would be configurable.
 
 ## Contributing
 
